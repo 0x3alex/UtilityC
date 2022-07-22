@@ -1,6 +1,6 @@
 #ifndef ARRAY
 #define ARRAY
-#define logging 1
+#define logging 0
 
 enum types {INT = sizeof(int),DOUBLE = sizeof(double)};
 
