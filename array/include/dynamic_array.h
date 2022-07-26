@@ -3,7 +3,7 @@
 #define logging 0
 
 enum types {INT = sizeof(int),DOUBLE = sizeof(double)};
-
+// int lookUp[9] = {48,49,50,51,52,53,54,55,56,57};
 /*
 *   array.used_size will always be one greater than the actual used size
 */
