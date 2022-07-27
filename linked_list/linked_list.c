@@ -14,7 +14,7 @@ void start_ll(list_node *l, enum ll_types t, void *data){
 void push_ll(list_node *l, void *data) {
     list_node *head = get_last_node_ll(l);
 
-    head->next = calloc(1,sizeof(node_t));
+    head->next = calloc(1,sizeof(list_node));
     if(head->next == NULL) exit(-1);
     head->next->data = data;
     head->next->next = NULL;
@@ -26,7 +26,7 @@ void push_ll(list_node *l, void *data) {
 
 void unshift_ll(list_node *l, void *data) {
     list_node *head = l;
-    list_node *new = calloc(1,sizeof(node_t));
+    list_node *new = calloc(1,sizeof(list_node));
     new->data = l->data;
     new->next = l->next;
     if(l->t == double_ll) {
