@@ -40,6 +40,4 @@ int concat(struct array *s, struct array *s2);
 
 int reverse(struct array *s);
 
-char *array_to_string(struct array *s);
-
 #endif
