@@ -1,15 +1,4 @@
-# Modernized-C
-Implimentation of modern concepts for the C-Language
+# UtilityC
 
-# Implimentet
-- Arrays (Dynamic and Safe) - Handled through a custom struct
-  - get()
-  - resize()
-  - append()
-  - insert()
-  - push()
-  - push_values()
-  - remove_at_index()
-  - pop()
-  - concat()
-  - reverse()
+#What is UtilityC?
+UtilityC is a library containing useful and mondern programming concepts (arrays,linked lists, trees,...) to easily impliment into projects, without needing to impliment such features by hand!
