@@ -19,5 +19,7 @@ int main(void) {
     shift_ll(&n);
     print_ll(&n);
     printf("last value: %c\n",(char*)get_last_node_ll(&n)->data);
+    set_data_ll(&n,a);
+    printf("last value: %c\n",(char*)get_last_node_ll(&n)->data);
     return 0;
 }

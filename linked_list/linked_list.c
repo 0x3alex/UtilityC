@@ -10,6 +10,31 @@ void start_ll(list_node *l, enum ll_types t, void *data){
     l->prev = NULL;
 }
 
+int is_data_emtpy_ll(list_node *l) {
+    if(l->data == NULL) {
+        return 1;
+    }
+    return 0;
+}
+
+void clear_data_ll(list_node *l) {
+    free(l->data);
+    l->data = NULL;
+}
+
+list_node *get_next_node_ll(list_node *l) {
+    return l->next;
+}
+
+list_node *get_prev_node_ll(list_node *l) {
+    if(l->t != double_ll) return NULL;
+    return l->prev;
+}
+
+void set_data_ll(list_node *l, void *data) {
+    l->data = data;
+}
+
 void push_ll(list_node *l, void *data) {
     list_node *head = get_last_node_ll(l);
 

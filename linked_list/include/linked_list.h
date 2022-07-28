@@ -12,6 +12,10 @@ typedef struct node {
 
 typedef node_t list_node;
 
+int is_data_emtpy_ll(list_node *l);
+
+void clear_data_ll(list_node *l);
+
 void start_ll(list_node *l, enum ll_types t, void *data);
 
 /*
@@ -38,6 +42,12 @@ void shift_ll(list_node *l);
 list_node *get_last_node_ll(list_node *l);
 
 list_node *get_at_index_ll(list_node *l, int index);
+
+list_node *get_next_node_ll(list_node *l);
+
+list_node *get_prev_node_ll(list_node *l);
+
+void set_data_ll(list_node *l, void *data);
 
 void print_ll(list_node *l);
 
