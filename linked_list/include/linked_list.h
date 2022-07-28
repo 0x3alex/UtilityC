@@ -43,8 +43,4 @@ void print_ll(list_node *l);
 
 int get_length_ll(list_node *l);
 
-int del_last_node_ll(list_node *l);
-
-int del_first_node_ll(list_node *l);
-
 #endif

@@ -3,7 +3,6 @@
 #include <stdio.h>
 
 
-
 void start_ll(list_node *l, enum ll_types t, void *data){
     l->t = t;
     l->data = data;
@@ -87,12 +86,4 @@ int get_length_ll(list_node *l) {
         l = l->next;
     }
     return count;
-}
-
-int del_last_node_ll(list_node *l) {
-
-}
-
-int del_first_node_ll(list_node *l) {
-
 }
