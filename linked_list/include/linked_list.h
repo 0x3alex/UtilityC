@@ -28,7 +28,6 @@ void push_ll(list_node *l, void *data);
 */
 void pop_ll(list_node *l);
 
-
 /*
 *   Add node at the beginning
 */
