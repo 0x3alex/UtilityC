@@ -9,7 +9,7 @@ typedef struct s_stack {
 
 
 /*
-*   Leave size as "NULL" when unlimited size
+*   size = -1 => unlimited
 */
 void start_stack(stack *s, void *data, int size);
 
