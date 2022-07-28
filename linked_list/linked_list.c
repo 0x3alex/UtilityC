@@ -24,6 +24,12 @@ void push_ll(list_node *l, void *data) {
     }
 }
 
+void pop_ll(list_node *l) {
+    list_node *last = get_last_node_ll(l);
+    last->prev->next = NULL;
+    free(last->prev->next);
+}
+
 void unshift_ll(list_node *l, void *data) {
     list_node *head = l;
     list_node *new = calloc(1,sizeof(list_node));
@@ -34,6 +40,13 @@ void unshift_ll(list_node *l, void *data) {
     }
     l->data = data;
     l->next = new;
+}
+
+void shift_ll(list_node *l) {
+    l->data = l->next->data;
+    l->next = l->next->next;
+    l->prev = NULL;
+    free(l->next);
 }
 
 list_node *get_last_node_ll(list_node *l) {
@@ -64,7 +77,7 @@ void print_ll(list_node *l) {
         i++;
         l = l->next;
     }
-    printf("[Item %d - Address: %p - Next-Item: %p]",i++,l,l->next);
+    printf("[Item %d - Address: %p - Next-Item: %p]\n",i++,l,l->next);
 }
 
 int get_length_ll(list_node *l) {
