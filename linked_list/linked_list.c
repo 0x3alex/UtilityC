@@ -31,7 +31,7 @@ list_node *get_prev_node_ll(list_node *l) {
     return l->prev;
 }
 
-void set_data_ll(list_node *l, void *data) {
+void set_data_ll(list_node *l, void *data) { 
     l->data = data;
 }
 
