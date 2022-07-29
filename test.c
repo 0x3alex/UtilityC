@@ -1,5 +1,6 @@
-#include "linked_list/include/linked_list.h"
-#include "stack/include/stack.h"
+// #include "linked_list/include/linked_list.h"
+// #include "stack/include/stack.h"
+#include "tree/include/tree.h"
 #include <stdio.h>
 
 int main(void) {
@@ -7,30 +8,45 @@ int main(void) {
     void *a = 'a';
     void *b = 'b';
     void *c = 'c';
+    void *d = 'd';
+    void *e = 'e';
+    void *f = 'f';
+    void *g = 'g';
 
 
-    stack *s;
-    start_stack(s,a);
-    print_stack(s);
+    node n;
+    set_root(&n,a);
+    set_node(&n,b,LEFT);
+    set_node(&n,c,RIGHT);
+    set_node(get_left(&n),d,LEFT);
+    set_node(get_left(&n),e,RIGHT);
 
-    // printf("top of stack: %c\n",(char*)s.data);
-    push_stack(&s,b);
-    // printf("top of stack: %c\n",(char*)s.data);
-    print_stack(s);
-    push_stack(&s,c);
-    print_stack(s);
-    push_stack(&s,c);
-    print_stack(s);
-    pop_stack(&s);
-    print_stack(s);
-    pop_stack(&s);
-    print_stack(s);
-    pop_stack(&s);
-    print_stack(s);
-    printf("Is Stack Empty? %s\n",is_empty(s) == 1 ? "True" : "False");
-    pop_stack(&s);
-    print_stack(s);
-    printf("Is Stack Empty? %s\n",is_empty(s) == 1 ? "True" : "False");
+    set_node(get_right(&n),f,LEFT);
+    set_node(get_right(&n),g,RIGHT);
+    printf("found %p\n",find_node(&n,e));
+
+    // stack *s;
+    // start_stack(s,a);
+    // print_stack(s);
+
+    // // printf("top of stack: %c\n",(char*)s.data);
+    // push_stack(&s,b);
+    // // printf("top of stack: %c\n",(char*)s.data);
+    // print_stack(s);
+    // push_stack(&s,c);
+    // print_stack(s);
+    // push_stack(&s,c);
+    // print_stack(s);
+    // pop_stack(&s);
+    // print_stack(s);
+    // pop_stack(&s);
+    // print_stack(s);
+    // pop_stack(&s);
+    // print_stack(s);
+    // printf("Is Stack Empty? %s\n",is_empty(s) == 1 ? "True" : "False");
+    // pop_stack(&s);
+    // print_stack(s);
+    // printf("Is Stack Empty? %s\n",is_empty(s) == 1 ? "True" : "False");
     // push_stack(&s,c);
     // print_stack(&s);
     // push_stack(&s,c);

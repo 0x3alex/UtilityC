@@ -1,14 +1,16 @@
 #ifndef STACK
 #define STACK
-#define SHOW_LIFETIME 1
+#define STORE_LIFETIME 1
+#define STACK_LOGGING 1
 
 typedef struct s_stack {
     void *data;
     struct s_stack *next;
-    #if SHOW_LIFETIME
+    #if STORE_LIFETIME
     /*
     *   The oldest entry has the lifetime 0.
     *   The younger the entry the more negative the number gets (-1,-2,-3,...)
+    *   Lifetime is only stored when STORE_LIFETIME is 1
     */
     int lifetime;
     #endif

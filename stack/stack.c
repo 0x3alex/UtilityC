@@ -11,17 +11,25 @@ void start_stack(stack *s, void *data) {
 }
 
 void push_stack(stack **s, void *data) {
-    #if SHOW_LIFETIME
+    #if STORE_LIFETIME
         static int l = -1;
     #endif
     stack *t = calloc(1,sizeof(stack));
-    if(t == NULL) exit(-1);
-    t->data = data;
-    t->next = *s;
-    #if SHOW_LIFETIME
-        t->lifetime = l--;
-    #endif
-    *s = t;
+    /*
+    *   If new stack entry has no memory allocated, the stack does not change
+    */
+    if(t != NULL)  {
+        t->data = data;
+        t->next = *s;
+        #if STORE_LIFETIME
+            t->lifetime = l--;
+        #endif
+        *s = t;
+    }else{
+        #if STACK_LOGGING
+            printf("[Log - push_stack()]: Memory allocation failed");
+        #endif
+    }
 }
 
 void print_stack(stack *s) {
@@ -31,14 +39,14 @@ void print_stack(stack *s) {
     }
     while (s->next != NULL)
     {
-        #if SHOW_LIFETIME
+        #if STORE_LIFETIME
             printf("[Item : %p, next: %p, lifetime: %d ] -> ", s, s->next, s->lifetime);
         #else
             printf("[Item : %p, next: %p] -> ", s, s->next);
         #endif
         s = s->next;
     }
-    #if SHOW_LIFETIME
+    #if STORE_LIFETIME
         printf("[Item : %p, next: %p, lifetime: %d ]\n", s, s->next, s->lifetime);
     #else
         printf("[Item : %p, next: %p]\n", s, s->next);
