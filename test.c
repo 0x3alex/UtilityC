@@ -1,6 +1,7 @@
 // #include "linked_list/include/linked_list.h"
 // #include "stack/include/stack.h"
-#include "tree/include/tree.h"
+// #include "tree/include/tree.h"
+#include "md_linked_list/include/md_linked_list.h"
 #include <stdio.h>
 
 int main(void) {
@@ -16,24 +17,27 @@ int main(void) {
     void *i = 'i';
     void *j = 'j';
     void *k = 'k';
-    void *l = 'l';
     void *m = 'm';
 
+    _md_ll l;
+    create_md_ll(&l,_3D,a);
+    push_x(&l,b);
+    push_y(l.x_next,c);
+    push_y(&l,e);
+    // node n;
+    // set_root(&n,a);
+    // set_node(&n,b,LEFT);
+    // set_node(&n,c,RIGHT);
+    // set_node(get_left(&n),d,LEFT);
+    // set_node(get_left(&n),e,RIGHT);
 
-    node n;
-    set_root(&n,a);
-    set_node(&n,b,LEFT);
-    set_node(&n,c,RIGHT);
-    set_node(get_left(&n),d,LEFT);
-    set_node(get_left(&n),e,RIGHT);
+    // set_node(get_right(&n),f,LEFT);
+    // set_node(get_right(&n),g,RIGHT);
 
-    set_node(get_right(&n),f,LEFT);
-    set_node(get_right(&n),g,RIGHT);
+    // set_node(get_right(get_right(&n)),h,LEFT);
+    // set_node(get_left(get_right(get_right(&n))),i,LEFT);
 
-    set_node(get_right(get_right(&n)),h,LEFT);
-    set_node(get_left(get_right(get_right(&n))),i,LEFT);
-
-    printf("found %p, %c\n",find_node(&n,i),(char*)find_node(&n,i)->data);
+    // printf("found %p, %c\n",find_node(&n,i),(char*)find_node(&n,i)->data);
     // print_tree(&n,9,0);
     // stack *s;
     // start_stack(s,a);
