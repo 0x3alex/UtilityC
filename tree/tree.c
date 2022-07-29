@@ -80,6 +80,9 @@ node *find_node(node *n, void *data) {
     
 }
 
+/*
+*   Maybe drop all child-nodes recursive too?
+*/
 void drop_node(node *n, enum node_pos pos) {
     if(pos == LEFT) {
         free(n->left);
@@ -118,6 +121,6 @@ void insert_node(node *n, void *data, enum node_pos pos) {
 
 void print_tree(node *n, int number_of_nodes,int spaces) {
     spaces += number_of_nodes;
-    
+
 }
 
