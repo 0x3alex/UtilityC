@@ -57,42 +57,36 @@ int is_leaf(node *n) {
 node *find_node(node *n, void *data) {
     if(n->data == data) {
         return n;
-    }
-    /*
-    *   Found in right sub-tree
-    */ 
-    if(has_right(n)) {
-        node *f = find_node(n->right,data);
-        if(f != NULL) {
-            return f;
+    }else{
+        /*
+        *   Found in right sub-tree
+        */ 
+        if(has_right(n)) {
+            node *f = find_node(n->right,data);
+            if(f != NULL) {
+                return f;
+            }
+        }
+        /*
+        *   Found in left sub-tree
+        */
+        if(has_left(n)) {
+            node *f = find_node(n->left,data);
+            if(f != NULL) {
+                return f;
+            }
         }
     }
-    /*
-    *   Found in left sub-tree
-    */
-    if(has_left(n)) {
-        node *f = find_node(n->left,data);
-        if(f != NULL) {
-            return f;
-        }
-    }
-    // static int i = 1;
-    // static node *f;
-    // if(n->data == data) {
-    //     printf("found at: %p %d\n",n,i);
-    //     f = n;
-    //     return f;
-    // }else {
-    //     ++i;
-    //     if(has_right(n)) {
-            
-    //         printf("has right! %d\n",i);
-    //         find_node(n->right,data);
-    //     }
-    //     if(has_left(n)) {
-    //         printf("has left! %d\n",i);
-    //         find_node(n->left,data);
-    //     }
-    // }
     
+}
+
+void drop_node(node *n, enum node_pos pos) {
+
+    if(pos == LEFT) {
+        free(n->left);
+        n->left = NULL;
+    }else{
+        free(n->right);
+        n->right = NULL;
+    }
 }

@@ -42,9 +42,7 @@ node *get_right(node *n);
 *   left -> left, right -> right
 */
 
-void insert_right(node *n, void *data);
-
-void insert_left(node *n, void *data);
+void insert_node(node *n, void *data, enum node_pos pos);
 
 /*
 *   ==================================
@@ -56,9 +54,7 @@ int has_right(node *n);
 
 int is_leaf(node *n);
 
-void drop_left(node *n);
-
-void drop_right(node *n);
+void drop_node(node *n, enum node_pos pos);
 
 /*
 *   N needs to be the root node

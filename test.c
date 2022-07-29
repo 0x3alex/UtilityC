@@ -24,6 +24,8 @@ int main(void) {
     set_node(get_right(&n),f,LEFT);
     set_node(get_right(&n),g,RIGHT);
     printf("found %p\n",find_node(&n,e));
+    drop_node(&n,LEFT);
+    printf("found %p\n",find_node(&n,e));
 
     // stack *s;
     // start_stack(s,a);
