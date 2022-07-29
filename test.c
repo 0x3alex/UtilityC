@@ -12,6 +12,12 @@ int main(void) {
     void *e = 'e';
     void *f = 'f';
     void *g = 'g';
+    void *h = 'h';
+    void *i = 'i';
+    void *j = 'j';
+    void *k = 'k';
+    void *l = 'l';
+    void *m = 'm';
 
 
     node n;
@@ -23,10 +29,12 @@ int main(void) {
 
     set_node(get_right(&n),f,LEFT);
     set_node(get_right(&n),g,RIGHT);
-    printf("found %p\n",find_node(&n,e));
-    drop_node(&n,LEFT);
-    printf("found %p\n",find_node(&n,e));
 
+    set_node(get_right(get_right(&n)),h,LEFT);
+    set_node(get_left(get_right(get_right(&n))),i,LEFT);
+
+    printf("found %p, %c\n",find_node(&n,i),(char*)find_node(&n,i)->data);
+    // print_tree(&n,9,0);
     // stack *s;
     // start_stack(s,a);
     // print_stack(s);

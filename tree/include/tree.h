@@ -63,4 +63,6 @@ node *find_node(node *n, void *data);
 
 void change_data(node *n, void *new_data);
 
+void print_tree(node *n, int number_of_nodes,int spaces);
+
 #endif

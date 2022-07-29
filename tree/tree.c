@@ -113,6 +113,11 @@ void insert_node(node *n, void *data, enum node_pos pos) {
             }
             n->right = new;
         }
-    }
+    } 
+}
+
+void print_tree(node *n, int number_of_nodes,int spaces) {
+    spaces += number_of_nodes;
     
 }
+
