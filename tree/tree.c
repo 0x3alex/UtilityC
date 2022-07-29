@@ -81,7 +81,6 @@ node *find_node(node *n, void *data) {
 }
 
 void drop_node(node *n, enum node_pos pos) {
-
     if(pos == LEFT) {
         free(n->left);
         n->left = NULL;
@@ -89,4 +88,31 @@ void drop_node(node *n, enum node_pos pos) {
         free(n->right);
         n->right = NULL;
     }
+}
+
+void change_data(node *n, void *new_data) {
+    n->data = new_data;
+}
+
+void insert_node(node *n, void *data, enum node_pos pos) {
+    node *new = calloc(1,sizeof(node));
+    if(new != NULL) {
+        new->data = data;
+        if(pos == LEFT) {
+            if(n->left != NULL) {
+                new->left = n->left;
+            }else{
+                new->left = NULL;
+            }
+            n->left = new;
+        }else{
+            if(n->right != NULL) {
+                new->right = n->right;
+            }else{
+                new->right = NULL;
+            }
+            n->right = new;
+        }
+    }
+    
 }
