@@ -1,7 +1,6 @@
 // #include "linked_list/include/linked_list.h"
 // #include "stack/include/stack.h"
 // #include "tree/include/tree.h"
-#include "md_linked_list/include/md_linked_list.h"
 #include <stdio.h>
 
 int main(void) {
@@ -19,11 +18,6 @@ int main(void) {
     void *k = 'k';
     void *m = 'm';
 
-    _md_ll l;
-    create_md_ll(&l,_3D,a);
-    push_x(&l,b);
-    push_y(l.x_next,c);
-    push_y(&l,e);
     // node n;
     // set_root(&n,a);
     // set_node(&n,b,LEFT);
