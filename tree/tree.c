@@ -74,7 +74,6 @@ static int comp(void *v1 ,void *v2,enum data_type d) {
 */
 
 node *find_node(node *n, void *data, enum data_type d) {
-    puts("1");
     if(comp(n->data,data,d)) {
         return n;
     }else{

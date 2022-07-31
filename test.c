@@ -1,37 +1,61 @@
 // #include "linked_list/include/linked_list.h"
 // #include "stack/include/stack.h"
-#include "tree/include/tree.h"
+// #include "tree/include/tree.h"
+#include "binary_tree/include/binary_tree.h"
 #include <stdio.h>
 
 int main(void) {
 
-    void *a = (void*)'a';
-    void *b = 'b';
-    void *c = 'c';
-    void *d = 'd';
-    void *e = 'e';
-    void *f = 'f';
-    void *g = 'g';
-    void *h = 'h';
-    void *i = 'i';
-    void *j = 'j';
-    void *k = 'k';
-    void *m = 'm';
+    binary_node n;
+    set_root(&n,INT,20);
+    printf("root value %d\n",n.data.INT);
+    add_node(&n,16);
+    add_node(&n,25);
+    add_node(n.left, 14);
+    add_node(n.left, 17);
 
-    node n;
-    set_root(&n,a);
-    set_node(&n,b,LEFT);
-    set_node(&n,c,RIGHT);
-    set_node(get_left(&n),d,LEFT);
-    set_node(get_left(&n),e,RIGHT);
+    add_node(n.left->left, 13);
+    add_node(n.left->left, 15);
 
-    set_node(get_right(&n),f,LEFT);
-    set_node(get_right(&n),g,RIGHT);
+    printf("n.left %d\n",n.left->data.INT);
+    printf("n.right %d\n",n.right->data.INT);
 
-    set_node(get_right(get_right(&n)),h,LEFT);
-    set_node(get_left(get_right(get_right(&n))),i,LEFT);
-    printf("found %p, %c\n",find_node(&n,g,INT),(char*)find_node(&n,g,INT)->data);
-    print_tree(&n,9,0);
+    printf("n.left.left %d\n",n.left->left->data);
+    printf("n.left.right %d\n",n.left->right->data);
+
+    printf("n.left.left.left %d\n",n.left->left->left->data);
+    printf("n.left.left.right %d\n",n.left->left->right->data);
+
+    printf("searched : %d\n",search(&n,17)->data); 
+    // search(&n,115);
+
+    // void *a = (void*)'a';
+    // void *b = 'b';
+    // void *c = 'c';
+    // void *d = 'd';
+    // void *e = 'e';
+    // void *f = 'f';
+    // void *g = 'g';
+    // void *h = 'h';
+    // void *i = 'i';
+    // void *j = 'j';
+    // void *k = 'k';
+    // void *m = 'm';
+
+    // node n;
+    // set_root(&n,a);
+    // set_node(&n,b,LEFT);
+    // set_node(&n,c,RIGHT);
+    // set_node(get_left(&n),d,LEFT);
+    // set_node(get_left(&n),e,RIGHT);
+
+    // set_node(get_right(&n),f,LEFT);
+    // set_node(get_right(&n),g,RIGHT);
+
+    // set_node(get_right(get_right(&n)),h,LEFT);
+    // set_node(get_left(get_right(get_right(&n))),i,LEFT);
+    // printf("found %p, %c\n",find_node(&n,g,INT),(char*)find_node(&n,g,INT)->data);
+    // print_tree(&n,9,0);
     // stack *s;
     // start_stack(s,a);
     // print_stack(s);
