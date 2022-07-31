@@ -4,4 +4,4 @@ test.c
 .vscode/settings.json
 test.c
 .vscode
-.dynamic_array
+.gitignore
