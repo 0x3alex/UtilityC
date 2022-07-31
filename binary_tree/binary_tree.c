@@ -119,3 +119,57 @@ void add_node(binary_node *n,...) {
     }
     va_end(value);
 }
+
+void print_in_order(binary_node *n) {
+    if(n != NULL) {
+        print_in_order(n->left);
+        switch(n->type) {
+            case INT:
+                printf("%d ",n->data.INT);
+                break;
+            case CHAR:
+                printf("%c ",n->data.INT);
+                break;
+            case DOUBLE: case FLOAT:
+                printf("%lf ",n->data.DOUBLE);
+                break;
+        }
+        print_in_order(n->right);
+    }
+}
+
+void print_pre_order(binary_node *n) {
+    if(n != NULL) {
+        switch(n->type) {
+            case INT:
+                printf("%d ",n->data.INT);
+                break;
+            case CHAR:
+                printf("%c ",n->data.INT);
+                break;
+            case DOUBLE: case FLOAT:
+                printf("%lf ",n->data.DOUBLE);
+                break;
+        }
+        print_pre_order(n->left);
+        print_pre_order(n->right);
+    }
+}
+
+void print_post_oder(binary_node *n) {
+    if(n != NULL) {
+        print_pre_order(n->left);
+        print_pre_order(n->right);
+        switch(n->type) {
+            case INT:
+                printf("%d ",n->data.INT);
+                break;
+            case CHAR:
+                printf("%c ",n->data.INT);
+                break;
+            case DOUBLE: case FLOAT:
+                printf("%lf ",n->data.DOUBLE);
+                break;
+        }
+    }
+}

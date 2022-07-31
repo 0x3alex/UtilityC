@@ -20,4 +20,10 @@ void add_node(binary_node *n,...);
 
 binary_node *search(binary_node *n,...);
 
+void print_in_order(binary_node *n);
+
+void print_pre_order(binary_node *n);
+
+void print_post_oder(binary_node *n);
+
 #endif

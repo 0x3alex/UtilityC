@@ -27,6 +27,12 @@ int main(void) {
     printf("n.left.left.right %d\n",n.left->left->right->data);
 
     printf("searched : %d\n",search(&n,17)->data); 
+    puts("-------");
+    print_in_order(&n);
+    printf("\n");
+    print_pre_order(&n);
+    printf("\n");
+    print_post_oder(&n);
     // search(&n,115);
 
     // void *a = (void*)'a';
