@@ -10,6 +10,8 @@ typedef struct s_node{
 
 enum node_pos {LEFT,RIGHT};
 
+enum data_type {INT,DOUBLE,CHAR,FLOAT};
+
 
 /*
 *   Set root node
@@ -59,7 +61,7 @@ void drop_node(node *n, enum node_pos pos);
 /*
 *   N needs to be the root node
 */
-node *find_node(node *n, void *data);
+node *find_node(node *n, void *data, enum data_type d);
 
 void change_data(node *n, void *new_data);
 

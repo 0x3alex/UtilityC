@@ -1,6 +1,6 @@
 // #include "linked_list/include/linked_list.h"
 // #include "stack/include/stack.h"
-// #include "tree/include/tree.h"
+#include "tree/include/tree.h"
 #include <stdio.h>
 
 int main(void) {
@@ -18,21 +18,21 @@ int main(void) {
     void *k = 'k';
     void *m = 'm';
 
-    // node n;
-    // set_root(&n,a);
-    // set_node(&n,b,LEFT);
-    // set_node(&n,c,RIGHT);
-    // set_node(get_left(&n),d,LEFT);
-    // set_node(get_left(&n),e,RIGHT);
+    node n;
+    set_root(&n,a);
+    set_node(&n,b,LEFT);
+    set_node(&n,c,RIGHT);
+    set_node(get_left(&n),d,LEFT);
+    set_node(get_left(&n),e,RIGHT);
 
-    // set_node(get_right(&n),f,LEFT);
-    // set_node(get_right(&n),g,RIGHT);
+    set_node(get_right(&n),f,LEFT);
+    set_node(get_right(&n),g,RIGHT);
 
-    // set_node(get_right(get_right(&n)),h,LEFT);
-    // set_node(get_left(get_right(get_right(&n))),i,LEFT);
+    set_node(get_right(get_right(&n)),h,LEFT);
+    set_node(get_left(get_right(get_right(&n))),i,LEFT);
 
-    // printf("found %p, %c\n",find_node(&n,i),(char*)find_node(&n,i)->data);
-    // print_tree(&n,9,0);
+    printf("found %p, %c\n",find_node(&n,g,CHAR),(char*)find_node(&n,g,CHAR)->data);
+    print_tree(&n,9,0);
     // stack *s;
     // start_stack(s,a);
     // print_stack(s);

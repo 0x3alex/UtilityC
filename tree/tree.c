@@ -54,15 +54,36 @@ int is_leaf(node *n) {
 /*
 *   N needs to be the root node
 */
-node *find_node(node *n, void *data) {
-    if(n->data == data) {
+
+
+static int comp(void *v1 ,void *v2,enum data_type d) {
+    switch (d)
+    {
+        case INT:
+            return *(int*)v1 == *(int*)v2;
+            break;
+        case FLOAT:
+            return *(float*)v1 == *(float*)v2;
+            break;
+        case DOUBLE:
+            return *(double*)v1 == *(double*)v2;
+            break;
+        case CHAR:
+            return (char*)v1 == (char*)v2;
+            break;
+    }
+}
+
+node *find_node(node *n, void *data, enum data_type d) {
+    puts("1");
+    if(comp(n->data,data,d)) {
         return n;
     }else{
         /*
         *   Found in right sub-tree
         */ 
         if(has_right(n)) {
-            node *f = find_node(n->right,data);
+            node *f = find_node(n->right,data,d);
             if(f != NULL) {
                 return f;
             }
@@ -71,7 +92,7 @@ node *find_node(node *n, void *data) {
         *   Found in left sub-tree
         */
         if(has_left(n)) {
-            node *f = find_node(n->left,data);
+            node *f = find_node(n->left,data,d);
             if(f != NULL) {
                 return f;
             }
