@@ -51,28 +51,27 @@ int is_leaf(node *n) {
     return (n->right == NULL && n->left == NULL);
 }
 
-/*
-*   N needs to be the root node
-*/
-
-
 static int comp(void *v1 ,void *v2,enum data_type d) {
     switch (d)
     {
         case INT:
-            return *(int*)v1 == *(int*)v2;
+            return (int*)v1 == (int*)v2;
             break;
         case FLOAT:
-            return *(float*)v1 == *(float*)v2;
+            return (float*)v1 == (float*)v2;
             break;
         case DOUBLE:
-            return *(double*)v1 == *(double*)v2;
+            return (double*)v1 == (double*)v2;
             break;
         case CHAR:
             return (char*)v1 == (char*)v2;
             break;
     }
 }
+
+/*
+*   N needs to be the root node
+*/
 
 node *find_node(node *n, void *data, enum data_type d) {
     puts("1");

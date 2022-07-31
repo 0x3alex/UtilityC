@@ -5,7 +5,7 @@
 
 int main(void) {
 
-    void *a = 'a';
+    void *a = (void*)'a';
     void *b = 'b';
     void *c = 'c';
     void *d = 'd';
@@ -30,8 +30,7 @@ int main(void) {
 
     set_node(get_right(get_right(&n)),h,LEFT);
     set_node(get_left(get_right(get_right(&n))),i,LEFT);
-
-    printf("found %p, %c\n",find_node(&n,g,CHAR),(char*)find_node(&n,g,CHAR)->data);
+    printf("found %p, %c\n",find_node(&n,g,INT),(char*)find_node(&n,g,INT)->data);
     print_tree(&n,9,0);
     // stack *s;
     // start_stack(s,a);
