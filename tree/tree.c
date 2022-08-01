@@ -121,10 +121,8 @@ void insert_node(node *n, void *data, int pos, int number_of_child_nodes, enum d
         }
         if(n->nodes[pos] != NULL) {
             new->nodes[pos] = n->nodes[pos]; //keep node index 
-            printf("np: %p\n",new->nodes[pos]);
         }
         n->nodes[pos] = new;
-        printf("nn: %p\n",n->nodes[pos]);
     }    
 }
 
