@@ -1,54 +1,64 @@
 // #include "linked_list/include/linked_list.h"
 // #include "stack/include/stack.h"
-// #include "tree/include/tree.h"
-#include "binary_tree/include/binary_tree.h"
+#include "tree/include/tree.h"
+// #include "binary_tree/include/binary_tree.h"
 #include <stdio.h>
 
 int main(void) {
 
-    binary_node n;
-    set_root(&n,INT,20);
-    printf("root value %d\n",n.data.INT);
-    add_node(&n,16);
-    add_node(&n,25);
-    add_node(n.left, 14);
-    add_node(n.left, 17);
+    // binary_node n;
+    // set_root(&n,INT,20);
+    // printf("root value %d\n",n.data.INT);
+    // add_node(&n,16);
+    // add_node(&n,25);
+    // add_node(n.left, 14);
+    // add_node(n.left, 17);
 
-    add_node(n.left->left, 13);
-    add_node(n.left->left, 15);
+    // add_node(n.left->left, 13);
+    // add_node(n.left->left, 15);
 
-    printf("n.left %d\n",n.left->data.INT);
-    printf("n.right %d\n",n.right->data.INT);
+    // printf("n.left %d\n",n.left->data.INT);
+    // printf("n.right %d\n",n.right->data.INT);
 
-    printf("n.left.left %d\n",n.left->left->data);
-    printf("n.left.right %d\n",n.left->right->data);
+    // printf("n.left.left %d\n",n.left->left->data);
+    // printf("n.left.right %d\n",n.left->right->data);
 
-    printf("n.left.left.left %d\n",n.left->left->left->data);
-    printf("n.left.left.right %d\n",n.left->left->right->data);
+    // printf("n.left.left.left %d\n",n.left->left->left->data);
+    // printf("n.left.left.right %d\n",n.left->left->right->data);
 
-    printf("searched : %d\n",search(&n,17)->data); 
-    puts("-------");
-    print_in_order(&n);
-    printf("\n");
-    print_pre_order(&n);
-    printf("\n");
-    print_post_oder(&n);
+    // printf("searched : %d\n",search(&n,17)->data); 
+    // puts("-------");
+    // print_in_order(&n);
+    // printf("\n");
+    // print_pre_order(&n);
+    // printf("\n");
+    // print_post_oder(&n);
+    
     // search(&n,115);
 
-    // void *a = (void*)'a';
-    // void *b = 'b';
-    // void *c = 'c';
-    // void *d = 'd';
-    // void *e = 'e';
-    // void *f = 'f';
-    // void *g = 'g';
-    // void *h = 'h';
-    // void *i = 'i';
-    // void *j = 'j';
-    // void *k = 'k';
-    // void *m = 'm';
+    void *a = (void*)'a';
+    void *b = 'b';
+    void *c = 'c';
+    void *d = 'd';
+    void *e = 'e';
+    void *f = 'f';
+    void *g = 'g';
+    void *h = 'h';
+    void *i = 'i';
+    void *j = 'j';
+    void *k = 'k';
+    void *m = 'm';
 
-    // node n;
+    node n;
+    set_root(&n,a,2);
+    set_node(&n,b,0,5);
+    set_node(&n,c,1,3);
+    printf("before size change %p\n",get_child_node(&n,0));
+    set_node(get_child_node(&n,0),d,0,5);
+    set_node(get_child_node(&n,1),e,0,3);
+
+    change_size(&n,3);
+    printf("after size change %p\n",get_child_node(&n,0));
     // set_root(&n,a);
     // set_node(&n,b,LEFT);
     // set_node(&n,c,RIGHT);
