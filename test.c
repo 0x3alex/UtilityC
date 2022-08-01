@@ -50,15 +50,20 @@ int main(void) {
     void *m = 'm';
 
     node n;
-    set_root(&n,a,2);
-    set_node(&n,b,0,5);
-    set_node(&n,c,1,3);
+    set_root(&n,a,2,CHAR);
+    set_node(&n,b,0,5,CHAR);
+    set_node(&n,c,1,3,CHAR);
     printf("before size change %p\n",get_child_node(&n,0));
-    set_node(get_child_node(&n,0),d,0,5);
-    set_node(get_child_node(&n,1),e,0,3);
+    set_node(get_child_node(&n,0),d,0,5,CHAR);
+    set_node(get_child_node(&n,1),e,0,3,CHAR);
+    print_tree(&n,CHAR);
 
     change_size(&n,3);
     printf("after size change %p\n",get_child_node(&n,0));
+    insert_node(&n,f,0,3,CHAR);
+    printf("after insert n0 %p\n",get_child_node(&n,0));
+    printf("after insert n0.0 %p\n",get_child_node(get_child_node(&n,0),0));
+    print_tree(&n,CHAR);
     // set_root(&n,a);
     // set_node(&n,b,LEFT);
     // set_node(&n,c,RIGHT);
