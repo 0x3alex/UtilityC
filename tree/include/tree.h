@@ -14,8 +14,6 @@ typedef struct s_node{
 } node;
 
 
-
-
 /*
 *   Set root node
 */

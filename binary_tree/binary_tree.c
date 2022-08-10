@@ -30,7 +30,6 @@ binary_node *search(binary_node *n,...) {
         case INT: case CHAR:
             int va_int = va_arg(value,int);
             if(n->data.INT == va_int) {
-                puts("found");
                 return n;
             }else{
                if(n->data.INT > va_int) {

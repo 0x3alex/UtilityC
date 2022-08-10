@@ -1,6 +1,7 @@
 #include "string/include/string.h"
 #include <stdlib.h>
 #include <ctype.h >
+
 char *to_lower_case(char *s) {
     int i = 0;
     while(s[i]) {
