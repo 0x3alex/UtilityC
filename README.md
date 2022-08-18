@@ -1,3 +1,3 @@
 # UtilityC
 
-UtilityC is a collection of modern data-structs (linked list, tree, stack,queue,...) and other usefull non-standard C features to make development faster and more efficient.
+UtilityC is a collection of modern data-structs (linked list, tree, stack,queue,...) and other usefull non-standard C features.
